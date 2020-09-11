@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## [ProTable](https://procomponents.ant.design/components/table#protable)
 
-## Available Scripts
+### `Columns`
 
-In the project directory, you can run:
+| 参数         | 说明                                                         | 类型    | 默认值 | 版本 |
+| :----------- | :----------------------------------------------------------- | :------ | :----- | :--- |
+| key          | React 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性 | string  | -      |      |
+| hideInSearch | 在查询表单中不展示此项                                       | boolean | -      |      |
+|              |                                                              |         | -      |      |
+|              |                                                              |         |        |      |
+|              |                                                              |         |        |      |
+|              |                                                              |         |        |      |
 
-### `yarn start`
+### `dataSource`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+~~~jsx
+dataSource={data}
+~~~
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+按照 [React 的规范](https://zh-hans.reactjs.org/docs/lists-and-keys.html#keys)，所有的数组组件必须绑定 `key`。在 Table 中，`dataSource` 和 `columns` 里的数据值都需要指定 `key` 值。对于 `dataSource` 默认将每列数据的 `key` 属性作为唯一的标识。
 
-### `yarn test`
+### `request`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+获取 `dataSource` 的方法  
 
-### `yarn build`
+`(params?: {pageSize: number;current: number;[key: string]: any;},sort,filter) => Promise<RequestData<T>>`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `rowSelection.type`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+第一列是联动的选择框。可以通过 `rowSelection.type` 属性指定选择类型，默认为 `checkbox`。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200911092252822.png" alt="image-20200911092252822" style="zoom:67%;" />
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## [Table](https://ant.design/components/table-cn/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
