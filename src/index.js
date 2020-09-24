@@ -12,11 +12,12 @@ import TreeMenu from "./compontents/TreeMenu";
 //ReactDOM.render(<IssueTable />, document.getElementById("root")); //
 
 // Simple Input demo from gov
-//ReactDOM.render(<BaseForm />, document.getElementById("root"));
+ReactDOM.render(<BaseForm />, document.getElementById("root"));
 
 // Simple TreeSelector demo from gov
 // ReactDOM.render(<TreeSelector />, document.getElementById("root"));
 
 // Simple TreeMenu demo from gov
-ReactDOM.render(<TreeMenu />, document.getElementById("root"));
+// ReactDOM.render(<TreeMenu />, document.getElementById("root"));
+
 serviceWorker.unregister();

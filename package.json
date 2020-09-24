@@ -6,11 +6,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
     "@testing-library/user-event": "^12.1.4",
+    "axios": "^0.20.0",
     "browserslist": "^4.14.2",
     "caniuse-lite": "^1.0.30001125",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.3",
+    "swr": "^0.3.4"
   },
   "scripts": {
     "start": "react-scripts start",

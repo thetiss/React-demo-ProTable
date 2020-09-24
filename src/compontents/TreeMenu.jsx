@@ -72,6 +72,11 @@ const treeData = [
 ];
 
 export default function TreeMenu() {
+  function sayHello() {
+    for (let i = 0; i < 4; i++) {
+      console.log(i);
+    }
+  }
   const [expandedKeys, setExpandedKeys] = useState([]);
   const [checkedKeys, setCheckedKeys] = useState([]);
   const [selectedKeys, setSelectedKeys] = useState([]);

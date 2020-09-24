@@ -258,6 +258,20 @@ API[#](https://ant.design/components/modal-cn/#API)
 
 ## Form in Modal
 
+### 难点
+
+1 form 、modal有各自的提交处理逻辑。
+
+2 form获取的数据应该怎样提交
+
+### 解决办法
+
+1 用form提交数据逻辑
+
+2 用modal提交数据逻辑
+
+### deleting
+
 form组织元素text input,ratio button等。用于组织好信息，不用实现提交。
 
 modal有一个自带onOK、onCancel按钮，用她来实现提交。
