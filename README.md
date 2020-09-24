@@ -268,9 +268,95 @@ http://localhost:8000/system-management/rolePermission
 
 ~~~
 
-# TreeSelect树选择
+## TreeSelect树选择 VS Tree
+
+前者同时具备tree、select属性，后者只tree。没有select(下拉样式)。
+
+但二者均可展开、收起、选择事件。
+
+## TreeSelect树选择
+
+树型选择控件。
+
+### 何时使用[#](https://ant.design/components/tree-select-cn/#何时使用)
+
+类似 Select 的选择控件，可选择的数据结构是一个树形结构时，可以使用 TreeSelect，例如公司层级、学科系统、分类目录等等。
+
+### API
+
+| 参数                    | 说明                                                         | 类型                                                         | 默认值                  | 版本 |
+| :---------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :---------------------- | :--- |
+| treeDefaultExpandedKeys | 默认展开的树节点                                             | string[]                                                     | -                       |      |
+| showCheckedStrategy     | 定义选中项回填的方式。`TreeSelect.SHOW_ALL`: 显示所有选中节点(包括父节点)。`TreeSelect.SHOW_PARENT`: 只显示父节点(当父节点下所有子节点都选中时)。 默认只显示子节点 | `TreeSelect.SHOW_ALL` | `TreeSelect.SHOW_PARENT` | `TreeSelect.SHOW_CHILD` | `TreeSelect.SHOW_CHILD` |      |
+| treeCheckable           | 显示 Checkbox                                                | boolean                                                      | false                   |      |
+| allowClear              | 显示清除按钮                                                 | boolean                                                      | false                   |      |
+| treeData                | treeNodes 数据，如果设置则不需要手动构造 TreeNode 节点（value 在整个树范围内唯一） | array<{value, title, children, [disabled, disableCheckbox, selectable, checkable]}> | []                      |      |
+| loadData                | 异步加载数据                                                 | function(node)                                               |                         |      |
+| onChange                | 选中树节点时调用此函数                                       | function(value, label, extra)                                | -                       |      |
+| value                   | 指定当前选中的条目                                           | string \| string[]                                           | --                      |      |
 
 
+
+### TreeNode props[#](https://ant.design/components/tree-select-cn/#TreeNode-props)
+
+> 建议使用 treeData 来代替 TreeNode，免去手工构造麻烦
+
+| 参数            | 说明                                               | 类型                | 默认值 | 版本 |
+| :-------------- | :------------------------------------------------- | :------------------ | :----- | :--- |
+| selectable      | 是否可选                                           | boolean             | true   |      |
+| checkable       | 当树为 Checkbox 时，设置独立节点是否展示 Checkbox  | boolean             | -      |      |
+| disableCheckbox | 禁掉 Checkbox                                      | boolean             | false  |      |
+| disabled        | 是否禁用                                           | boolean             | false  |      |
+| isLeaf          | 是否是叶子节点                                     | boolean             | false  |      |
+| key             | 此项必须设置（其值在整个树范围内唯一）             | string              | -      |      |
+| title           | 树节点显示的内容                                   | string \| ReactNode | `---`  |      |
+| value           | 默认根据此属性值进行筛选（其值在整个树范围内唯一） |                     |        |      |
+
+
+
+## Tree树形控件
+
+多层次的结构列表。
+
+### 何时使用[#](https://ant.design/components/tree-cn/#何时使用)
+
+文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用 `树控件` 可以完整展现其中的层级关系，并具有展开收起选择等交互功能。
+
+### API[#](https://ant.design/components/tree-cn/#API)
+
+### Tree props[#](https://ant.design/components/tree-cn/#Tree-props)
+
+![image-20200923111753747](C:\Users\chenh\Desktop\react\0 img\learn from youtube\img\image-20200923111753747.png)
+
+element从左往右：expand、check、select
+
+| 参数             | 说明                                                         | 类型                                                         | 默认值 |
+| :--------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----- |
+| onExpand         | 展开/收起节点时触发                                          | function(expandedKeys, {expanded: bool, node})               | -      |
+| onCheck          | 点击复选框触发                                               | function(checkedKeys, e:{checked: bool, checkedNodes, node, event, halfCheckedKeys}) | -      |
+| onSelect         | 点击树节点触发                                               | function(selectedKeys, e:{selected: bool, selectedNodes, node, event}) | -      |
+|                  |                                                              |                                                              |        |
+| expandedKeys     | （受控）展开指定的树节点                                     | string[]                                                     | []     |
+| checkedKeys      | （受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联 | string[] \| {checked: string[], halfChecked: string[]}       | []     |
+| selectedKeys     | （受控）设置选中的树节点                                     | string[]                                                     |        |
+|                  |                                                              |                                                              |        |
+| autoExpandParent | 是否自动展开父节点                                           | boolean                                                      | false  |
+| checkable        | 当树为 checkable 时，设置独立节点是否展示 Checkbox           | boolean                                                      |        |
+
+### TreeNode props[#](https://ant.design/components/tree-cn/#TreeNode-props)
+
+| 参数            | 说明                                                         | 类型                              | 默认值                 |      |
+| :-------------- | :----------------------------------------------------------- | :-------------------------------- | :--------------------- | ---- |
+| checkable       | 当树为 checkable 时，设置独立节点是否展示 Checkbox           | boolean                           | -                      |      |
+| disableCheckbox | 禁掉 checkbox                                                | boolean                           | false                  |      |
+| disabled        | 禁掉响应                                                     | boolean                           | false                  |      |
+| icon            | 自定义图标。可接收组件，props 为当前节点 props               | ReactNode \| (props) => ReactNode | -                      |      |
+| isLeaf          | 设置为叶子节点(设置了`loadData`时有效)                       | boolean                           | false                  |      |
+| key             | 被树的 (default)ExpandedKeys / (default)CheckedKeys / (default)SelectedKeys 属性所用。注意：整个树范围内的所有节点的 key 值不能重复！ | string                            | (内部计算出的节点位置) |      |
+| selectable      | 设置节点是否可被选中                                         | boolean                           | true                   |      |
+| title           | 标题                                                         | string \| ReactNode               | `---`                  |      |
+
+### DirectoryTree props[#](https://ant.design/components/tree-cn/#DirectoryTree-props)
 
 # Production Code
 
