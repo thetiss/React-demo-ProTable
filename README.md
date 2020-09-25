@@ -205,7 +205,7 @@ columns
 | onChange | 分页、排序、筛选变化时触发 | function(pagination, filters, sorter, extra: { currentDataSource: [], action: `paginate` | `sort` | `filter` }) |
 | rowKey | 表格行 key 的取值，可以是字符串或一个函数，可作数据主键 | string \| function(record): string | `key` |  |
 
-## Form表单
+Form表单
 
 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
 
@@ -371,6 +371,36 @@ element从左往右：expand、check、select
 | title           | 标题                                                         | string \| ReactNode               | `---`                  |      |
 
 ### DirectoryTree props[#](https://ant.design/components/tree-cn/#DirectoryTree-props)
+
+## axios(fetch api data)
+
+### given Api url 
+
+~~~txt
+https://ghibliapi.herokuapp.com/films
+~~~
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925164409848.png" alt="image-20200925164409848" style="zoom: 67%;" />
+
+
+
+~~~txt
+https://jsonplaceholder.typicode.com/posts
+~~~
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925164555766.png" alt="image-20200925164555766" style="zoom:67%;" />
+
+### roadmap
+
+#### 2 传参，只展示部分数据
+
+100%
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925173144005.png" alt="image-20200925173144005" style="zoom:50%;" />
+
+#### 1 展示一个列表数据
+
+100%
 
 # Production Code
 
