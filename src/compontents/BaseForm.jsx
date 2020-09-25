@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, Input, Modal } from "antd";
-import useSWR from "swr";
+//import useSWR from "swr";
 import axios from "axios";
 
 export default function BaseForm() {
