@@ -396,6 +396,12 @@ https://jsonplaceholder.typicode.com/posts
 
 ### roadmap
 
+#### 0.0.4 axios with async and await
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925200704237.png" alt="image-20200925200704237" style="zoom:80%;" />
+
+
+
 #### 0.0.3 文本框输入，提交按钮传参(onClick)，只展示部分数据
 
  关键点：setIdFromButtonClick(Id);//将input获取到的id传递给onClick事件。
