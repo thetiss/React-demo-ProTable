@@ -374,6 +374,10 @@ element从左往右：expand、check、select
 
 ## axios(fetch api data)
 
+### learn from [here](https://www.youtube.com/watch?v=zm_09NER-R0&pbjreload=101)
+
+### github [here](https://github.com/thetiss/React-demo-ProTable.git)
+
 ### given Api url 
 
 ~~~txt
@@ -392,13 +396,23 @@ https://jsonplaceholder.typicode.com/posts
 
 ### roadmap
 
-#### 2 传参，只展示部分数据
+#### 0.0.3 文本框输入，提交按钮传参(onClick)，只展示部分数据
+
+ 关键点：setIdFromButtonClick(Id);//将input获取到的id传递给onClick事件。
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925182746967.png" alt="image-20200925182746967" style="zoom:67%;" />
+
+
+
+<img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925182924184.png" alt="image-20200925182924184" style="zoom:67%;" />
+
+#### 0.0.2 文本框传参(onChange)，只展示部分数据
 
 100%
 
 <img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925173144005.png" alt="image-20200925173144005" style="zoom:50%;" />
 
-#### 1 展示一个列表数据
+#### 0.0.1 展示一个列表数据
 
 100%
 
