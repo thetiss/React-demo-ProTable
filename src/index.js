@@ -8,6 +8,7 @@ import BaseForm from "./compontents/BaseForm";
 import TreeSelector from "./compontents/TreeSelector";
 import TreeMenu from "./compontents/TreeMenu";
 import LearnES6 from "./compontents/ES";
+import MovieCards from "./compontents/MovieCards";
 
 // Simple Protable from 官网
 //ReactDOM.render(<IssueTable />, document.getElementById("root")); //
@@ -22,5 +23,9 @@ import LearnES6 from "./compontents/ES";
 // ReactDOM.render(<TreeMenu />, document.getElementById("root"));
 
 // ES6 crash course
-ReactDOM.render(<LearnES6 />, document.getElementById("root"));
+// ReactDOM.render(<LearnES6 />, document.getElementById("root"));
+
+// Using axios to fetch data
+ReactDOM.render(<MovieCards />, document.getElementById("root"));
+
 serviceWorker.unregister();
