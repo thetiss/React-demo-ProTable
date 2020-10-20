@@ -2,7 +2,7 @@
  * @Author: hiyan
  * @Date: 2020-09-25 19:39:41
  * @Last Modified by: hiyan
- * @Last Modified time: 2020-09-25 20:08:13
+ * @Last Modified time: 2020-10-20 15:00:05
  */
 
 import React from "react";
@@ -17,10 +17,15 @@ import TreeMenu from "./compontents/TreeMenu";
 import LearnES6 from "./compontents/ES";
 import MovieCards from "./compontents/MovieCards";
 import Grid from "./compontents/Grid";
+import PureFunctionDemo from "./compontents/PureFunc"
+
+// pure function VS impure function
+ReactDOM.render(<PureFunctionDemo />, document.getElementById("root"));
+serviceWorker.unregister();
 
 // Using axios to fetch data with async and await,including Grid.js Row.js axios.js
-ReactDOM.render(<Grid />, document.getElementById("root"));
-serviceWorker.unregister();
+// ReactDOM.render(<Grid />, document.getElementById("root"));
+// serviceWorker.unregister();
 
 // Simple Protable from 官网
 //ReactDOM.render(<IssueTable />, document.getElementById("root")); //

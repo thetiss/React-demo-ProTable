@@ -60,6 +60,12 @@ const fetchData=()=>
 
 ## [ProTable](https://procomponents.ant.design/components/table#protable)
 
+### `tableRender`
+
+| tableRender | 自定义渲染表格函数 | `(props: ProTableProps<T, U>, defaultDom: JSX.Element, domList: { toolbar: JSX.Element \| undefined; alert: JSX.Element \| undefined; table: JSX.Element \| undefined;}) => React.ReactNode` |
+| ----------- | ------------------ | ------------------------------------------------------------ |
+|             |                    |                                                              |
+
 ### `toolBarRender`
 
 | toolBarRender | 渲染工具栏，支持返回一个 dom 数组，会自动增加 margin-right | `(action: UseFetchDataAction<RequestData<T>>) => React.ReactNode[]` |      |
@@ -101,19 +107,21 @@ toolBarRender={() => [
 
 ### `Columns`
 
-| 参数         | 说明                                                         | 类型                                                         | 默认值 | 版本    |
-| :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----- | :------ |
-| key          | React 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性 | string                                                       | -      |         |
-| hideInSearch | 在查询表单中不展示此项                                       | boolean                                                      | -      |         |
-| render       | 类似 table 的 render，第一个参数变成了 dom,增加了第四个参数 action | `(text: React.ReactNode,record: T,index: number,action: UseFetchDataAction<RequestData<T>>) => React.ReactNode \| React.ReactNode[]` | -      | AutDPro |
-| render       | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return 里面可以设置表格[行/列合并](https://ant.design/components/table-cn/#components-table-demo-colspan-rowspan) | function(text, record, index) {}                             |        | AutD    |
-|              |                                                              |                                                              |        |         |
-| valueType    | columns中值类型，若是时间型，在筛选时，会自动出现timeselector。valueType 还会影响查询表单的生成,不同的 valueType 对应不同的 antd 组件，对应关系如下表： | money 转化值为金额 eg. ¥10,000.26<br/>date 日期 eg. 2019-11-16<br/>dateTime 日期和时间 eg. 2019-11-16 12:50:00<br/>time 时间 eg. 12:50:00<br/>option 操作项，会自动增加 marginRight，只支持一个数组<br/>text 默认值，不做任何处理<br/>index 序号列<br/>indexBorder 带 border 的序号列 |        |         |
-| filters      |                                                              |                                                              |        | false   |
-| ValueEnum    | ValueEnum {   [key: string]:     \| React.ReactNode     \| {         text: React.ReactNode;         status: 'Success' \| 'Error' \| 'Processing' \| 'Warning' \| 'Default';       }; } |                                                              |        |         |
-| hideInSearch | 在查询框中是否显示该数据项                                   |                                                              |        |         |
-|              |                                                              |                                                              |        |         |
-|              |                                                              |                                                              |        |         |
+| 参数         | 说明                                                         | 类型                                                         | 默认值 | 版本          |
+| :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----- | :------------ |
+| dataIndex    | 列数据在数据项中对应的路径，支持通过数组查询嵌套路径         | string \| string[]                                           |        | AutD          |
+| render       | 生成复杂数据的渲染函数，参数分别为当前行的值，当前行数据，行索引，@return 里面可以设置表格[行/列合并](https://ant.design/components/table-cn/#components-table-demo-colspan-rowspan) | function(text, record, index) {}                             |        | AutD          |
+| key          | React 需要的 key，如果已经设置了唯一的 `dataIndex`，可以忽略这个属性 | string                                                       | -      |               |
+| hideInSearch | 在查询表单中不展示此项                                       | boolean                                                      | -      |               |
+| render       | 类似 table 的 render，第一个参数变成了 dom,增加了第四个参数 action | `(text: React.ReactNode,record: T,index: number,action: UseFetchDataAction<RequestData<T>>) => React.ReactNode \| React.ReactNode[]` | -      | ***AutDPro*** |
+|              |                                                              |                                                              |        |               |
+|              |                                                              |                                                              |        |               |
+| valueType    | columns中值类型，若是时间型，在筛选时，会自动出现timeselector。valueType 还会影响查询表单的生成,不同的 valueType 对应不同的 antd 组件，对应关系如下表： | money 转化值为金额 eg. ¥10,000.26<br/>date 日期 eg. 2019-11-16<br/>dateTime 日期和时间 eg. 2019-11-16 12:50:00<br/>time 时间 eg. 12:50:00<br/>option 操作项，会自动增加 marginRight，只支持一个数组<br/>text 默认值，不做任何处理<br/>index 序号列<br/>indexBorder 带 border 的序号列 |        |               |
+| filters      |                                                              |                                                              |        | false         |
+| ValueEnum    | ValueEnum {   [key: string]:     \| React.ReactNode     \| {         text: React.ReactNode;         status: 'Success' \| 'Error' \| 'Processing' \| 'Warning' \| 'Default';       }; } |                                                              |        |               |
+| hideInSearch | 在查询框中是否显示该数据项                                   |                                                              |        |               |
+|              |                                                              |                                                              |        |               |
+|              |                                                              |                                                              |        |               |
 
 
 
@@ -397,6 +405,8 @@ https://jsonplaceholder.typicode.com/posts
 ### roadmap
 
 #### 0.0.4 axios with async and await
+
+##### learn from [here](https://www.youtube.com/watch?v=lbHuwpPwfoc)
 
 <img src="C:\Users\chenh\Desktop\react\0 img\notes\image-20200925200704237.png" alt="image-20200925200704237" style="zoom:80%;" />
 
